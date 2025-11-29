@@ -1,0 +1,131 @@
+{
+  "language_learning": {
+    "greetings": {
+      "hello": [
+        "¡Hola! ¿Cómo estás?",
+        "¡Buenos días! ¿Qué tal?",
+        "¡Hola! ¿Cómo te va?"
+      ],
+      "goodbye": [
+        "¡Adiós! Que tengas un buen día.",
+        "¡Hasta luego! Nos vemos pronto.",
+        "¡Chao! Cuídate mucho."
+      ],
+      "how_are_you": [
+        "Estoy muy bien, gracias. ¿Y tú?",
+        "Todo bien por aquí. ¿Cómo estás tú?",
+        "Excelente, gracias por preguntar."
+      ]
+    },
+    "ordering_food": {
+      "restaurant_greeting": [
+        "¡Bienvenido! ¿Qué desea ordenar?",
+        "Buenas tardes. ¿En qué puedo ayudarle?",
+        "¡Hola! ¿Le gustaría ver el menú?"
+      ],
+      "taking_order": [
+        "Perfecto. ¿Algo más para beber?",
+        "Excelente elección. ¿Desea algún acompañamiento?",
+        "Muy bien. ¿Alguna preferencia especial?"
+      ],
+      "confirmation": [
+        "Su pedido estará listo en 15 minutos.",
+        "Perfecto. Son $25 en total.",
+        "Gracias por su orden. ¿Para llevar o para comer aquí?"
+      ]
+    },
+    "job_interview": {
+      "introduction": [
+        "Cuéntame sobre tu experiencia profesional.",
+        "¿Por qué te interesa este puesto?",
+        "¿Cuáles son tus principales fortalezas?"
+      ],
+      "follow_up": [
+        "Interesante. ¿Puedes darme un ejemplo?",
+        "¿Cómo manejas situaciones de presión?",
+        "¿Qué logros destacarías en tu carrera?"
+      ],
+      "closing": [
+        "¿Tienes alguna pregunta para nosotros?",
+        "Gracias por tu tiempo. Te contactaremos pronto.",
+        "Ha sido un placer conocerte."
+      ]
+    }
+  },
+  "general": {
+    "acknowledgment": [
+      "I understand.",
+      "Got it.",
+      "Okay, I'm listening.",
+      "I see what you mean.",
+      "That makes sense."
+    ],
+    "clarification": [
+      "Could you repeat that, please?",
+      "I didn't quite catch that. Could you say it again?",
+      "Sorry, could you rephrase that?",
+      "Can you elaborate on that?"
+    ],
+    "confirmation": [
+      "Done!",
+      "All set.",
+      "Completed successfully.",
+      "I've taken care of that.",
+      "Consider it done."
+    ],
+    "error": [
+      "I apologize, I didn't understand that.",
+      "Sorry, could you try saying that differently?",
+      "I'm having trouble understanding. Could you clarify?",
+      "Let me make sure I understand correctly..."
+    ],
+    "waiting": [
+      "One moment, please...",
+      "Let me check on that...",
+      "Just a second...",
+      "Processing your request..."
+    ]
+  },
+  "pronunciation_feedback": {
+    "excellent": [
+      "Perfect pronunciation!",
+      "Excellent! That was spot on.",
+      "Great job! Your pronunciation is improving.",
+      "That sounded very natural!"
+    ],
+    "good": [
+      "Good! Just a slight emphasis on the {phoneme}.",
+      "Almost there! Try stressing the {syllable} syllable.",
+      "Nice! Pay attention to the {sound} sound.",
+      "Well done! Small adjustment needed on {word}."
+    ],
+    "needs_work": [
+      "Let's practice that word again: {word}.",
+      "Try pronouncing {phoneme} like this...",
+      "The stress should be on the {syllable} syllable.",
+      "Listen carefully to the native pronunciation..."
+    ]
+  },
+  "grammar_correction": {
+    "gentle": [
+      "Just a small correction: it should be '{correct}'.",
+      "Good attempt! We usually say '{correct}'.",
+      "Almost! The correct form is '{correct}'.",
+      "Great sentence! Native speakers would say '{correct}'."
+    ],
+    "explanation": [
+      "Remember, we use {rule} in this case.",
+      "The verb should agree with {subject}.",
+      "In this tense, we use the form '{correct}'.",
+      "This is a common pattern: {pattern}."
+    ]
+  },
+  "encouragement": [
+    "You're doing great!",
+    "Keep it up!",
+    "I can see your improvement!",
+    "Don't give up, you're making progress!",
+    "That was much better than last time!",
+    "You're getting more confident!"
+  ]
+}

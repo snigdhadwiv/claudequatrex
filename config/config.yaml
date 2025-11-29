@@ -1,0 +1,184 @@
+# Real-Time Voice Assistant Configuration
+
+application:
+  name: "Real-Time Voice Assistant"
+  version: "1.0.0"
+  mode: "language-learning"  # Options: general, language-learning, interview-prep
+
+audio:
+  input:
+    sample_rate: 16000
+    channels: 1
+    chunk_size: 1024
+    format: "int16"
+    device_index: null  # null for default device
+
+  output:
+    sample_rate: 22050
+    channels: 1
+    buffer_size: 2048
+
+  processing:
+    noise_reduction: true
+    normalization: true
+    echo_cancellation: true
+
+vad:
+  enabled: true
+  aggressiveness: 3  # 0-3, higher = more aggressive
+  frame_duration_ms: 30
+  padding_duration_ms: 300
+  min_speech_duration_ms: 250
+
+stt:
+  engine: "faster-whisper"  # Options: faster-whisper, whisper, vosk
+  model: "base.en"  # Options: tiny, base, small, medium, large
+  language: "en"
+  streaming: true
+  partial_results: true
+  beam_size: 5
+  
+  optimization:
+    compute_type: "float16"  # float32, float16, int8
+    device: "auto"  # auto, cpu, cuda
+    num_workers: 1
+
+nlp:
+  intent_classifier:
+    model: "distilbert-base-uncased"
+    confidence_threshold: 0.7
+
+  entity_extractor:
+    model: "en_core_web_sm"
+    enabled: true
+
+  context_manager:
+    max_history: 10
+    context_timeout: 300  # seconds
+
+  optimization:
+    batch_size: 1
+    max_length: 128
+
+response_generation:
+  mode: "hybrid"  # Options: template, dynamic, hybrid
+  
+  template:
+    enabled: true
+    library_path: "config/response_templates.json"
+
+  dynamic:
+    model: "gpt2"  # Lightweight model for edge deployment
+    max_length: 50
+    temperature: 0.7
+
+  cache:
+    enabled: true
+    size: 1000
+    ttl: 3600  # seconds
+
+  predictive:
+    enabled: true
+    lookahead_tokens: 3
+
+tts:
+  engine: "piper"  # Options: piper, coqui, pyttsx3
+  model: "en_US-lessac-medium"
+  streaming: true
+  sentence_splitting: true
+  
+  voice:
+    speed: 1.0
+    pitch: 1.0
+    volume: 1.0
+
+  optimization:
+    chunk_size: 512
+    lookahead_sentences: 1
+
+pipeline:
+  processing:
+    mode: "async"  # Options: sync, async, parallel
+    max_latency_ms: 200
+    timeout_ms: 5000
+
+  interruption:
+    enabled: true
+    sensitivity: 0.8
+    cooldown_ms: 500
+
+  monitoring:
+    enabled: true
+    log_latency: true
+    alert_threshold_ms: 300
+
+language_learning:
+  enabled: true
+  target_language: "spanish"
+  proficiency_level: "intermediate"  # beginner, intermediate, advanced
+  
+  scenarios:
+    - "greetings"
+    - "ordering_food"
+    - "job_interview"
+    - "travel"
+    - "shopping"
+
+  feedback:
+    pronunciation: true
+    grammar: true
+    vocabulary: true
+    fluency: true
+
+  correction:
+    mode: "gentle"  # Options: strict, gentle, none
+    real_time: true
+
+performance:
+  optimization:
+    enable_gpu: true
+    model_quantization: true
+    cache_compiled_models: true
+    prefetch_models: true
+
+  resources:
+    max_memory_mb: 2048
+    max_cpu_percent: 80
+    priority: "latency"  # Options: latency, accuracy, balanced
+
+  monitoring:
+    profile_enabled: false
+    metrics_interval_s: 60
+
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file: "logs/voice_assistant.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  rotation: "1 day"
+  retention: "7 days"
+
+api:
+  enabled: true
+  host: "0.0.0.0"
+  port: 8000
+  websocket: true
+  cors_origins:
+    - "*"
+  
+  rate_limiting:
+    enabled: true
+    requests_per_minute: 60
+
+cloud_fallback:
+  enabled: false
+  providers:
+    - name: "openai"
+      api_key: "${OPENAI_API_KEY}"
+      models:
+        stt: "whisper-1"
+        llm: "gpt-3.5-turbo"
+  
+  conditions:
+    on_high_latency: true
+    latency_threshold_ms: 500
+    on_local_failure: true
